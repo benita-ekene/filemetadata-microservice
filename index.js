@@ -24,12 +24,12 @@ app.get('/', function (req, res) {
 
 app.post("/api/fileanalyse", upload.single('upfile'), (req, res) => {
 //upload('upfile') from html gives us access to req.file
-const { originalname, nametype, size } = req.file
+const { originalname, mimetype, size } = req.file
 res.json({
- name: originalname, 
- type: nametype, 
- size: size
-})
+  name: originalname, 
+  type: mimetype, 
+  size: size,
+ })
 })
 
 
